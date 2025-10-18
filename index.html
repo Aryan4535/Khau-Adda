@@ -1,0 +1,126 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khau Adda - Order Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Khau Adda!</h1>
+        <p>Your Favorite Veg Street Food-stole</p>
+        <a href="admin.html" class="admin-link">Admin Login</a>
+    </header>
+
+    <main class="container">
+        <section id="menu">
+            <h2>Our Menu 🍲</h2>
+            <div class="menu-items">
+                <!-- Menu items remain the same -->
+                 <div class="item" data-name="Pani Puri" data-price="40">
+                    <img src="https://i0.wp.com/milkandcardamom.com/wp-content/uploads/2023/08/Mulberry-Sweet-Rolls-1.png?fit=800%2C1132&ssl=1" alt="Pani Puri" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF5722/FFFFFF?text=Pani+Puri';">
+                    <h3>Pani Puri</h3>
+                    <p>A delightful snack of crispy puris filled with tangy water and savory fillings.</p>
+                    <div class="item-footer">
+                        <span class="price">₹40</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item" data-name="Vada Pav" data-price="30">
+                    <img src="https://images.pexels.com/photos/17433337/pexels-photo-17433337.jpeg?cs=srgb&dl=pexels-aditya-mara-425995080-17433337.jpg&fm=jpg" alt="Vada Pav" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF5722/FFFFFF?text=Vada+Pav';">
+                    <h3>Vada Pav</h3>
+                    <p>The classic Mumbai burger with a spiced potato fritter in a soft bread roll.</p>
+                    <div class="item-footer">
+                        <span class="price">₹30</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item" data-name="Dabeli" data-price="35">
+                    <img src="https://ministryofcurry.com/wp-content/uploads/2024/05/dabeli-10.jpg" alt="Dabeli" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF5722/FFFFFF?text=Dabeli';">
+                    <h3>Dabeli</h3>
+                    <p>A sweet and spicy potato filling stuffed in a bun, topped with pomegranate and peanuts.</p>
+                    <div class="item-footer">
+                        <span class="price">₹35</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item" data-name="Pav Bhaji" data-price="120">
+                    <img src="https://i.pinimg.com/736x/33/9b/b9/339bb9d3758a6078c7f8a7db996b0854.jpg" alt="Pav Bhaji" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF5722/FFFFFF?text=Pav+Bhaji';">
+                    <h3>Pav Bhaji</h3>
+                    <p>A flavorful mash of mixed vegetables served with soft, buttered bread rolls.</p>
+                    <div class="item-footer">
+                        <span class="price">₹120</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item" data-name="Bhel Puri" data-price="50">
+                    <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2019/04/Bombay-Chowpatty-Style-Bhel-Puri-H1.jpg?fit=600%2C900&ssl=1" alt="Bhel Puri" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF5722/FFFFFF?text=Bhel+Puri';">
+                    <h3>Bhel Puri</h3>
+                    <p>A tasty mix of puffed rice, vegetables, and a tangy tamarind sauce.</p>
+                    <div class="item-footer">
+                        <span class="price">₹50</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item" data-name="Sev Puri" data-price="60">
+                    <img src="https://i0.wp.com/sinfully-desilicious.com/wp-content/uploads/2020/09/8f.jpg?resize=525%2C528&ssl=1" alt="Sev Puri" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF5722/FFFFFF?text=Sev+Puri';">
+                    <h3>Sev Puri</h3>
+                    <p>Crispy flat puris topped with potatoes, onions, chutneys, and a generous amount of sev.</p>
+                    <div class="item-footer">
+                        <span class="price">₹60</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <aside id="cart">
+            <h2>Your Order 🛒</h2>
+            <ul id="cart-items">
+                <li class="cart-empty-msg">Your cart is empty.</li>
+            </ul>
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cart-total-price">0.00</span></strong>
+            </div>
+            <button id="place-order-btn">Place Order</button>
+        </aside>
+    </main>
+
+    <div id="address-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Enter Your Delivery Details</h2>
+            <form id="address-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}" title="Enter a valid 6-digit pincode">
+                <button type="submit" id="confirm-order-btn">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-status-modal" class="modal">
+        <div class="modal-content" id="order-status-content">
+            <h2>Order Status</h2>
+            <div id="order-status-details">
+                <!-- Order status will be injected here -->
+            </div>
+            <button id="close-status-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
